@@ -201,22 +201,20 @@ export function convertToObject(htmlString, styleList = null) {
       if (element.hasAttribute('data-id') === true) {
         imageId = element.getAttribute('data-id');
       }
-
-      if (element.hasAttribute('width') === true) {
+      if (element.hasAttribute('width') === true && !isNaN(element.getAttribute('width'))) {
         try {
           size.width = parseInt(element.getAttribute('width'));
         } catch (error) {
 
         }
       }
-      if (element.hasAttribute('height') === true) {
+      if (element.hasAttribute('height') === true  && !isNaN(element.getAttribute('height'))) {
         try {
           size.height = parseInt(element.getAttribute('height'));
         } catch (error) {
 
         }
       }
-      console.log('sssddssd', type)
 
       contents.push({
         component: 'image',

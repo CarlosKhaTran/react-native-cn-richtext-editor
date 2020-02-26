@@ -279,7 +279,7 @@ class CNRichTextEditor extends Component {
     }
 
     insertImage(url, id = null, height = null, width = null, type = 0) {
-      if (height != null && width != null) {
+      if ((height != null && width != null) || type !== 0) {
         this.addImageContent(url, id, height, width, type);
       } else {
         try {
